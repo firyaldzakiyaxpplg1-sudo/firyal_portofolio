@@ -1,0 +1,478 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===================================
+   RESET
+=================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* ===================================
+   WARNA
+=================================== */
+:root{
+    --primary: #9f86ff;
+    --secondary: #c8b6ff;
+    --accent: #ffd6e8;
+    --bg: #f8f7ff;
+    --card: #ffffff;
+    --text: #3f3d56;
+    --shadow: 0 10px 30px rgba(159,134,255,0.12);
+    --radius: 20px;
+}
+
+/* ===================================
+   BODY
+=================================== */
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        180deg,
+        #faf9ff 0%,
+        #f8f7ff 50%,
+        #f4f1ff 100%
+    );
+    color: var(--text);
+    line-height: 1.8;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.site-header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+}
+
+.site-footer{
+    grid-area: footer;
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+.container{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+.site-header{
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    padding: 18px 5%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.site-header h2{
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.site-header nav{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.site-header nav a{
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.site-header nav a:hover{
+    color: var(--primary);
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero{
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero img{
+    width: 240px;
+    height: 240px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 8px solid white;
+    box-shadow: var(--shadow);
+}
+
+.hero h1{
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    color: var(--primary);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero p{
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.05rem;
+}
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+.skills h2,
+.gallery h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+/* ===================================
+   SKILLS
+=================================== */
+.skills{
+    padding: 60px 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.skills h2{
+    grid-column: 1/-1;
+}
+
+/* ===================================
+   GALLERY
+=================================== */
+.gallery{
+    padding: 60px 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.gallery h2{
+    grid-column: 1/-1;
+}
+
+/* ===================================
+   CARD
+=================================== */
+.card{
+    background: var(--card);
+
+    border-radius: var(--radius);
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    transition: all 0.35s ease;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(159,134,255,0.18);
+}
+
+.card h3{
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.card img{
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+.site-footer{
+    margin-top: 60px;
+
+    background: linear-gradient(
+        135deg,
+        #9f86ff,
+        #b8a3ff
+    );
+
+    color: white;
+    text-align: center;
+
+    padding: 30px;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+@media (min-width:768px){
+
+    .site-header nav{
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .hero{
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .hero div{
+        flex: 1;
+    }
+
+    .skills{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* ===================================
+   DESKTOP
+=================================== */
+@media (min-width:1024px){
+
+    .skills{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .gallery{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+/* ===================================
+   DARK MODE
+=================================== */
+@media (prefers-color-scheme: dark){
+
+    body{
+        background: #181825;
+        color: #e5e5e5;
+    }
+
+    .site-header{
+        background: rgba(35,35,50,0.95);
+    }
+
+    .site-header h2{
+        color: #d8cfff;
+    }
+
+    .site-header nav a{
+        color: #f0f0f0;
+    }
+
+    .site-header nav a:hover{
+        color: #c8b6ff;
+    }
+
+    .card{
+        background: #242437;
+        color: #e5e5e5;
+    }
+
+    .hero h1,
+    .skills h2,
+    .gallery h2,
+    .card h3{
+        color: #c8b6ff;
+    }
+
+    .hero img{
+        border-color: #2f2f48;
+    }
+
+    .site-footer{
+        background: #202030;
+        color: white;
+    }
+}
+
+/* ===================================
+   TENTANG
+=================================== */
+.hero{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero img{
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(159,134,255,0.15);
+}
+
+.hero h1{
+    font-size: clamp(2rem,4vw,3.5rem);
+    color: #9f86ff;
+    margin-bottom: 15px;
+}
+
+.hero p{
+    margin-bottom: 12px;
+}
+
+/* ===================================
+   KEAHLIAN
+=================================== */
+.skills{
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.skills h2{
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #9f86ff;
+    font-size: 2rem;
+}
+
+.card{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(159,134,255,0.12);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+}
+
+.card h3{
+    color: #9f86ff;
+    margin-bottom: 10px;
+}
+
+/* ===================================
+   PORTOFOLIO
+=================================== */
+.gallery{
+    padding: 60px 0;
+}
+
+.gallery h2{
+    text-align: center;
+    color: #9f86ff;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.gallery-grid{
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 25px;
+}
+
+.profil{
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(159,134,255,0.12);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.profil img{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #c8b6ff;
+}
+
+.profil-info{
+    text-align: center;
+}
+
+.profil-info h2{
+    color: #9f86ff;
+    margin-bottom: 15px;
+}
+
+#theme-toggle{
+    display: none;
+}
+
+.theme-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #9f86ff;
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    z-index: 1000;
+}
